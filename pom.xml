@@ -10,11 +10,11 @@
 
 
     <build>
-        <testResources>
+       <!-- <testResources>
             <testResource>
                 <directory>${project.basedir}/test/resources</directory>
             </testResource>
-        </testResources>
+        </testResources>-->
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
