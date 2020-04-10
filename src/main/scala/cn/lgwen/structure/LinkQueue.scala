@@ -1,4 +1,4 @@
-package cn.lgwen
+package cn.lgwen.structure
 
 class Queue[T](){
 
@@ -62,11 +62,6 @@ class Queue[T](){
       null.asInstanceOf[T]
     }
     front.get.node
-  }
-
-
-  class Node[T](var node: T, var next: Node[T]) {
-
   }
 
 

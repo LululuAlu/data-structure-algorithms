@@ -8,7 +8,6 @@
     <artifactId>data-structures-algorithms</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-
     <build>
        <!-- <testResources>
             <testResource>
