@@ -4,6 +4,7 @@ import java.util.Comparator;
 
 /**
  * create by wuxuyang on 2019/8/20
+ * 冒泡排序
  */
 public class Bubble {
 

@@ -8,7 +8,7 @@ import java.util.Comparator;
 public class Insert {
 
     public static <T> T[] sort(T[] arrays, Comparator<T> comparator) {
-        for (int i = 1; i < arrays.length; i++) {
+        for (int i = 2; i < arrays.length; i++) {
             for (int j = 0; j < i; j++) {
                 if (comparator.compare(arrays[i], arrays[j]) < 0) {
                     // arrays[i] 要插入到 有序部分，

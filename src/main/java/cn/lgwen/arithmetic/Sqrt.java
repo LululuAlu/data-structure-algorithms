@@ -1,4 +1,4 @@
-package cn.lgwen.sort;
+package cn.lgwen.arithmetic;
 
 /**
  * 2020/5/21

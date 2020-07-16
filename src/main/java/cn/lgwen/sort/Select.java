@@ -14,6 +14,7 @@ public class Select {
             minIndex = i;
             T min = arrays[i];
             for(int j = i + 1; j < arrays.length; j++) {
+                // 比较找出最小（或最大）的值记录下下标
                 if (comparable.compare(min, arrays[j]) > 0) {
                     minIndex = j;
                     min = arrays[j];
@@ -25,6 +26,7 @@ public class Select {
     }
 
     private static <T> void swap (T[] arrays, int a, int b) {
+        if (a == b) return;
         T tmp = arrays[a];
         arrays[a] = arrays[b];
         arrays[b] = tmp;

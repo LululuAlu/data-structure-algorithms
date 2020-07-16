@@ -1,4 +1,4 @@
-package cn.lgwen.sort;
+package cn.lgwen.arithmetic;
 
 import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
@@ -70,8 +70,8 @@ public class MergeTwoLists {
     }
 
     public static class ListNode {
-        int val;
-        ListNode next;
+        public int val;
+        public ListNode next;
 
         public ListNode(int x) {
             val = x;
