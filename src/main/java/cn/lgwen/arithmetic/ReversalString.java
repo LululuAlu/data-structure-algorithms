@@ -1,4 +1,4 @@
-package cn.lgwen.structure;
+package cn.lgwen.arithmetic;
 
 
 import java.sql.SQLOutput;
