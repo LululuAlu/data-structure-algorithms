@@ -7,8 +7,9 @@ package cn.lgwen.structure.tree;
  * @date 2020/7/30
  */
 public class Tree234 {
-    Node root = new Node();
 
+
+    Node root = new Node();
 
     public void insert(DataItem item) {
         Node current = root;
@@ -18,7 +19,7 @@ public class Tree234 {
                 split(current);
                 // 拆分后当前节点会变成子节点 所以先获取其父节点，然后重新开始查询
                 current = current.getParent();
-                //找到一个 当前值可以插入节点（可能是父节点，可能是叶子节点）
+                //找到一个 当前值可以插入节点（可能是非叶子节点，可能是叶子节点）
                 current = getNextChild(current, item);
             } else if (current.isLead()) { //当前节点是叶子节点 找到要插入的node 直接插入
                 break;
@@ -29,7 +30,7 @@ public class Tree234 {
         current.insertItem(item);
     }
 
-    //
+    // 找到属于他的子节点，找到第一个大于父节点的
     private Node getNextChild(Node current, DataItem item) {
         int len = current.nodes;
         int i;
@@ -83,7 +84,7 @@ public class Tree234 {
     }
 
 
-    class DataItem {
+    static class DataItem {
         long data;
 
         @Override
@@ -94,7 +95,7 @@ public class Tree234 {
 
     class Node {
         int nodes;
-        Node Parent;
+        Node parent;
         Node[] child = new Node[4];
         DataItem[] items = new DataItem[3];
 
@@ -124,7 +125,7 @@ public class Tree234 {
         }
 
         public Node getParent() {
-            return null;
+            return parent;
         }
 
         public boolean isLead() {
@@ -133,7 +134,13 @@ public class Tree234 {
 
         // 返回当前最大值
         public DataItem removeMax() {
-            return null;
+            DataItem aa = items[0];
+            for (DataItem item : items) {
+                if (item.data > aa.data) {
+                    aa = item;
+                }
+            }
+            return aa;
         }
 
         public Node disConnect(int i) {
