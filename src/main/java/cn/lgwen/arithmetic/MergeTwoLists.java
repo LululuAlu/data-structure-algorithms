@@ -1,7 +1,5 @@
 package cn.lgwen.arithmetic;
 
-import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
-
 /**
  * 2020/5/7
  * aven.wu

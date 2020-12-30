@@ -3,6 +3,10 @@ package cn.lgwen.sort;
 import cn.lgwen.arithmetic.MergeTwoLists;
 import org.junit.Test;
 
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class MergeTwoListsTest {
 
     @Test
@@ -31,6 +35,33 @@ public class MergeTwoListsTest {
             System.out.print(res.val);
             System.out.print(",");
             res = res.next;
+        }
+    }
+
+
+    @Test
+    public void linkedMap() {
+        Map<String, Integer> map = new LinkedHashMap<>();
+        map.put("a", 1);
+        map.put("b", 2);
+        map.put("s", 3);
+        map.put("h", 4);
+        map.put("f", 5);
+        for (Iterator<Integer> it = map.values().iterator(); it.hasNext(); ) {
+            System.out.print(it.next());
+            System.out.print(",");
+        }
+        System.out.println();
+        map.get("b");
+        for (Iterator<Integer> it = map.values().iterator(); it.hasNext(); ) {
+            System.out.print(it.next());
+            System.out.print(",");
+        }
+        System.out.println();
+        map.put("h", 4);
+        for (Iterator<Integer> it = map.values().iterator(); it.hasNext(); ) {
+            System.out.print(it.next());
+            System.out.print(",");
         }
     }
 
