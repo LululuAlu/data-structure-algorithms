@@ -65,4 +65,12 @@ public class MergeTwoListsTest {
         }
     }
 
+    @Test
+    public void and() {
+        int a = 16;
+        int b = 3;
+        int c = 20;
+        System.out.println(b&a);
+        System.out.println(c&a);
+    }
 }
