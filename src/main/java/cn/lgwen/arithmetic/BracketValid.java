@@ -1,4 +1,6 @@
-package cn.lgwen.structure;
+package cn.lgwen.arithmetic;
+
+import cn.lgwen.structure.Stack;
 
 /**
  * 2020/4/27
