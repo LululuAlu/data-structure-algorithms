@@ -53,11 +53,11 @@ public class Digraph {
 
     // 删除节点
     private void deleteVertex(int delDegree) {
-        //vertices[delDegree].degree--;
+        vertices[delDegree].degree--;
         // 还要找出所有跟当前节点有关联的 入度 -1
         for (int i = 0; i < nVer; i++) {
             if (adjMat[delDegree][i] == 1) {
-                vertices[delDegree].degree--;
+                vertices[i].degree--;
             }
         }
     }
@@ -68,17 +68,20 @@ public class Digraph {
         for (int i = 0; i < nVer; i++) {
             isEdge = false;
             for (int j = 0; j < nVer; j++) {
-                //
-                if (adjMat[i][j] == 1 && vertices[i].degree > 0 ||
-                        // 表示这个位子上没有节点，或者已经被删除了 不需要处理
-                        adjMat[i][j] == 1 && vertices[i].degree < -1) {
+                // 找到入度为 0 的节点
+                int iii = adjMat[i][j];
+                if (iii != 0) {
                     isEdge = true;
-                    break;
+                }
+                if (iii == 1 && vertices[i].degree == 0) {
+                    return i;
                 }
             }
-            if (!isEdge) {
+            // 如果当前没有被连接，并且入度为0
+            if (!isEdge && vertices[i].degree == 0) {
                 return i;
             }
+
         }
         return -1;
     }
@@ -101,8 +104,7 @@ public class Digraph {
         g.addVertices('c');
         g.addVertices('d');
         g.addEdge(0, 1);
-        g.addEdge(0, 2);
-        g.addEdge(1, 2);
+        g.addEdge(2, 1);
         g.addEdge(1, 3);
         g.topo();
     }

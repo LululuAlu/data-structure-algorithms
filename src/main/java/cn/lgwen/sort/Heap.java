@@ -1,5 +1,7 @@
 package cn.lgwen.sort;
 
+import java.util.Arrays;
+
 /**
  * @author aven danxieai@163.com
  * @version 0.1
@@ -9,7 +11,9 @@ package cn.lgwen.sort;
 public class Heap {
 
     public static void main(String[] args) {
-        new Heap().findKthLargest(new int[]{3,4,2,1,4,5,2,}, 0);
+        int[] arrays = new int[]{3,4,2,1,4,5,2,};
+        new Heap().findKthLargest(arrays, 0);
+        System.out.println(Arrays.toString(arrays));
     }
 
     public int findKthLargest(int[] arr, int k) {
@@ -30,13 +34,13 @@ public class Heap {
     // 构建大顶堆
     private void buildMaxHeap(int[] arr, int len) {
         // 从最后一个非叶节点开始向前遍历，调整节点性质，使之成为大顶堆
-        for (int i = (int) Math.floor(len / 2) - 1; i >= 0; i--) {
+        for (int i = len / 2 - 1; i >= 0; i--) {
             heapify(arr, i, len);
         }
     }
 
     private void heapify(int[] arr, int i, int len) {
-        //找出佐佑子树
+        //找出左右子树
         int leftIdx = 2 * i + 1;
         int rightIdx = 2 * i + 2;
         int largestIdx = i;
